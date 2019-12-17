@@ -5,6 +5,7 @@ import Person from '../page/Person/Person.vue'
 import Home from '../page/Home/Home.vue'
 import Classify from '../page/Classify/Classify.vue'
 import Shopping from '../page/Shopping/Shopping.vue'
+import Leeches from "../page/Classify/leeches.vue"
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -20,18 +21,21 @@ export default new Router({
     },
     {
     	path: '/person',
-      	name: 'Person',
-      	component: Person
+      name: 'Person',
+      component: Person
     },
      {
     	path: '/classify',
-      	name: 'Classify',
-      	component: Classify
+      name: 'Classify',
+      component: Classify,
+      children:[
+        {path:"/",component:Leeches}
+      ]
     },
      {
     	path: '/shopping',
-      	name: 'Shopping',
-      	component: Shopping
+      name: 'Shopping',
+      component: Shopping
     },
   ]
 })
